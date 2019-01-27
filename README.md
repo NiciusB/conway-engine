@@ -1,4 +1,4 @@
-# conway-engine [![npm version](https://badge.fury.io/js/conway-engine.svg)](https://badge.fury.io/js/conway-engine) ![Size](https://img.shields.io/bundlephobia/min/conway-engine.svg) ![License](https://img.shields.io/npm/l/conway-engine.svg)
+# conway-engine [![npm version](https://badge.fury.io/js/conway-engine.svg)](https://badge.fury.io/js/conway-engine) [![Size](https://img.shields.io/bundlephobia/min/conway-engine.svg)](https://niciusb.github.io/conway-engine/dist/index.js) [![License](https://img.shields.io/npm/l/conway-engine.svg)](https://github.com/NiciusB/conway-engine/blob/master/LICENSE)
 
 A moderately performant engine for Conway's Game of Life
 

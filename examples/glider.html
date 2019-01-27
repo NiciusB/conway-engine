@@ -1,0 +1,57 @@
+<script src="../dist/index.js"></script>
+<body style="margin:0;">
+  <canvas id="gameCanvas" style="width:100%;height:100%;image-rendering: pixelated;"></canvas>
+  <script>
+    const game = new ConwayJs({
+      height: 5,
+      width: 7,
+      wrapOnEdges: true,
+      enableLastTickInfo: true,
+      initialWorld: [
+        [false, false, false, false, false, false, false],
+        [false, false, false, false, false, false, false],
+        [false, false, false, false, true, true, true],
+        [false, false, false, false, true, false, false],
+        [false, false, false, false, false, true, false]
+      ]
+    })
+  
+    const gameCanvas = document.getElementById('gameCanvas')
+    gameCanvas.width = game.width
+    gameCanvas.height = game.height
+    const ctx = gameCanvas.getContext('2d')
+
+    function draw() {
+      for (let y = 0; y < game.height; y++) {
+        for (let x = 0; x < game.width; x++) {
+          const cell = game.world[y][x]
+          if (cell.aliveLastTick === cell.alive) continue
+          ctx.fillStyle = cell.alive ? '#333' : '#eee'
+          ctx.fillRect(x, y, 1, 1)
+        }
+      }
+    }
+    draw()
+
+    function tick() {
+      draw()
+      game.tick()
+    }
+
+    var fps = 3;
+    var now;
+    var then = Date.now();
+    var interval = 1000/fps;
+    var delta;
+    function controlledFPS() {
+      requestAnimationFrame(controlledFPS);
+      now = Date.now();
+      delta = now - then;
+      if (delta > interval) {
+        then = now - (delta % interval);
+        tick()
+      }
+    }
+    controlledFPS()
+  </script>
+</body>

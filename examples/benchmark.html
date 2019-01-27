@@ -1,0 +1,38 @@
+<script src="../dist/index.js"></script>
+<body>
+  <div id="benchmark-info">Loading</div>
+  <div id="benchmark-result">Loading</div>
+  <script>
+    const width = 300
+    const height = 300
+    const ticks = 3000
+    document.getElementById('benchmark-info').innerText = `Info: ${width}x${height} grid, ${ticks} ticks per test`
+
+
+    function test(options = {}) {
+      const game = new ConwayJs({
+        seed: 'Benchmark', // Having the same world helps with consistency between runs
+        width,
+        height,
+        enableLastTickInfo: options.enableLastTickInfo,
+        wrapOnEdges: options.wrapOnEdges
+      })
+
+      const timeStart = Date.now()
+      for (let x = 0; x < ticks; x++) {
+        game.tick()
+      }
+      return (Date.now() - timeStart) / 1000
+    }
+    
+    let timeTaken
+    timeTaken1 = test()
+    timeTaken2 = test({ enableLastTickInfo: true })
+    timeTaken3 = test({ wrapOnEdges: true })
+    document.getElementById('benchmark-result').innerHTML = `
+      <p><b>No options enabled:</b> Time taken: ${timeTaken1}s (${Math.round(ticks / timeTaken1)} ticks per second)</p>
+      <p><b>enableLastTickInfo enabled:</b> Time taken: ${timeTaken2}s (${Math.round(ticks / timeTaken2)} ticks per second)</p>
+      <p><b>wrapOnEdges enabled:</b> Time taken: ${timeTaken3}s (${Math.round(ticks / timeTaken3)} ticks per second)</p>
+    `
+  </script>
+</body>

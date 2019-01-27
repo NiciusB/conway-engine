@@ -1,0 +1,36 @@
+{
+  "name": "conway-engine",
+  "version": "0.0.1",
+  "description": "A moderately performant engine for Conway's Game of Life",
+  "main": "dist/index.js",
+  "keywords": [
+    "conway",
+    "game of life",
+    "conway's game of life"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "BABEL_ENV=production node build.js"
+  },
+  "browserslist": "> 0.25%, not dead",
+  "author": "NiciusB",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "eslint": "^5.12.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "rollup": "^1.1.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-uglify": "^6.0.2"
+  },
+  "dependencies": {
+    "alea": "^1.0.0"
+  }
+}

@@ -1,4 +1,4 @@
-# conway-engine
+# conway-engine [![npm version](https://badge.fury.io/js/conway-engine.svg)](https://badge.fury.io/js/conway-engine) ![Size](https://img.shields.io/bundlephobia/min/conway-engine.svg) ![License](https://img.shields.io/npm/l/conway-engine.svg)
 
 A moderately performant engine for Conway's Game of Life
 
@@ -25,7 +25,7 @@ console.log(conwaysGame)
 
 ## Examples
 
-See the examples folder to get a better understanding on how the library works
+See the examples folder to get a better understanding on how the library works: https://niciusb.github.io/conway-engine/examples/
 
 ## API
 
